@@ -1,0 +1,31 @@
+<nav>
+
+    <a href="{% url 'product_list' %}">Home</a>
+
+    <a href="{% url 'cart_detail' %}">
+        Cart
+    </a>
+
+    <a href="{% url 'order_history' %}">
+        View My Orders
+    </a>
+
+</nav>
+
+<hr>
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+  {% for product in products %}
+    <div style="width:200px; border:1px solid #ddd; padding:10px;">
+        <a href="{% url 'product_detail' product.slug %}">
+      <img src="{{ product.image.url }}" width="150">
+
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.price }}</p>
+    <a href="{% url 'add_to_cart' product.id %}">
+    Add to Cart
+</a>
+    </div>
+  {% endfor %}
+
+</div>

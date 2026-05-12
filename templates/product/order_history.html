@@ -1,0 +1,17 @@
+<h1>My Orders</h1>
+
+{% for order in orders %}
+
+<div>
+    <h3>Order #{{ order.id }}</h3>
+
+    <p>Status: {{ order.status }}</p>
+
+    <p>Total: {{ order.total_price }}</p>
+
+    <p>Date: {{ order.created_at }}</p>
+</div>
+
+{% empty %}
+    <p>No orders yet.</p>
+{% endfor %}
