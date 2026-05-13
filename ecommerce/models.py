@@ -33,6 +33,13 @@ class Order(models.Model):
         ('cod', 'Cash on Delivery'),
         ('stub','Test Payment')]
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    address = models.TextField()
+    city = models.CharField(max_length=255)
+    postal_code = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20)
+    notes = models.TextField(blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES,default='pending')
     created_at = models.DateTimeField(auto_now_add=True)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)

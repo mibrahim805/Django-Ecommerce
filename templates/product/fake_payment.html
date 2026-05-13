@@ -1,0 +1,30 @@
+{#<h1>Test Payment</h1>#}
+{##}
+{#<p>Order ID: {{ order.id }}</p>#}
+{##}
+{#<p>Total: {{ order.total_price }}</p>#}
+{##}
+{#<form method="post">#}
+{##}
+{#    {% csrf_token %}#}
+{##}
+{#    <button type="submit">#}
+{#        Simulate Payment Success#}
+{#    </button>#}
+{##}
+{#</form>#}
+
+
+
+
+
+
+
+<h1>Processing Payment...</h1>
+
+<p>Click confirm to simulate bank response</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Payment</button>
+</form>
